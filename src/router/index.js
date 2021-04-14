@@ -9,13 +9,13 @@ export default new Router({
   mode:"history",
   routes: [
     {
-      path: '/',
+      path: '/ces',
       name: 'HelloWorld',
       component: HelloWorld
     },
     //测试develop分支
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component: Login
     }
