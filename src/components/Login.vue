@@ -1,54 +1,49 @@
 <template>
-    
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" >
-  <el-form-item label="用户名" prop="name">
-    <el-input v-model="ruleForm.name" ></el-input>
-  </el-form-item>
-  <el-form-item label="密码" prop="password">
-    <el-input v-model="ruleForm.password"></el-input>
-  </el-form-item>
- 
-  
-</el-form>
+    <el-form ref="loginForm" :model="loginForm" label-width="80px" id="loginCla">
+        <div>
+            <input type="text">
+            <input type="text">
+        </div>
+    </el-form>
 </template>
 import axios from "../api/common";
 <script>
 
   export default {
+    name:"Login",
     data() {
       return {
-        ruleForm: {
-          
-          name: '',
-          password:''
-
-        },
-        rules: {
-          name: [
-            { required: true, message: '请输入用户名', trigger: 'blur' },
-            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-          ],
-          password: [
-            { required: true, message: '请输入密码', trigger: 'change' }
-          ]
-          
+        loginForm: {
+          userName: '',
+          passWord: ''
         }
       };
+      //https://github.com/yang-xiaokai/vues.git
     },
     methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
+      login(){
+        console.log(loginForm.userName);
+        console.log(loginForm.passWord);
+          this.axios.put('/login',this.loginForm).then((res=>{
+            this.loginForm=res.data.data
+              console.log(userName);
+              console.log(passWord);
+
+          }))
       }
     }
   }
 </script>
+
+<style scoped>
+  #loginCla{
+    width: 500px;
+   margin: 0% auto;
+   height: 50%;
+   margin-bottom: 0px;
+
+
+  }
+
+
+</style>

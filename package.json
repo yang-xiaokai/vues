@@ -1,5 +1,5 @@
 {
-  "name": "msm",
+  "name": "vues",
   "version": "1.0.0",
   "description": "my-space-manager",
   "author": "yangxiaokai <18821201892@163.com>",
@@ -14,7 +14,8 @@
     "element-ui": "^2.15.1",
     "vue": "^2.5.2",
     "vue-axios": "^3.2.4",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "webpack-dev-server": "^2.9.7"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -50,7 +51,6 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
