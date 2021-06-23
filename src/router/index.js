@@ -26,4 +26,5 @@ export default new Router({
     //   component: VueLunBotu
     // }
   ]
+  //测试git是否使用
 })
